@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html class="light" lang="ca">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LSA Consulting | Assessorament empresarial a Rubí</title>
+<meta name="description" content="Gestió i assessorament empresarial a Rubí. Serveis fiscals, comptables i laborals per a autònoms i pimes. Més de 15 anys d'experiència.">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Italiana&family=Source+Sans+3:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#283583",
+          "primary-dark": "#1d2761",
+          "secondary": "#f39200",
+          "secondary-hover": "#d88200",
+          "surface": "#f9f9f9",
+          "surface-alt": "#f3f3f3",
+          "on-surface": "#1b1b1b",
+          "on-surface-variant": "#454651",
+          "outline-variant": "#d6d6dd",
+        },
+        borderRadius: { DEFAULT: "0rem", lg: "0rem", xl: "0rem", full: "9999px" },
+        fontFamily: {
+          headline: ['"DM Serif Display"', "serif"],
+          logo: ['"Italiana"', "serif"],
+          body: ['"Source Sans 3"', "sans-serif"],
+        },
+      },
+    },
+  }
+</script>
+
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  .executive-nav { background: rgba(255, 255, 255, 0.95); border-bottom: 1px solid #e2e2e2; backdrop-filter: saturate(180%) blur(10px); }
+  .accent-bg { background: #f39200; }
+  .accent-bg:hover { background: #d88200; }
+  .navy-bg { background-color: #283583; }
+  html { scroll-behavior: smooth; }
+
+  .logo-lockup { display: inline-flex; flex-direction: column; align-items: stretch; line-height: 1; }
+  .logo-LSA {
+    font-family: 'Italiana', serif;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 0.85;
+  }
+  .logo-consulting {
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    text-transform: lowercase;
+    letter-spacing: 0.02em;
+    text-align: right;
+    line-height: 1;
+  }
+  .logo-sm .logo-LSA { font-size: 2rem; }
+  .logo-sm .logo-consulting { font-size: 0.7rem; margin-top: 0.15rem; }
+  .logo-lg .logo-LSA { font-size: 4rem; }
+  .logo-lg .logo-consulting { font-size: 1.1rem; margin-top: 0.25rem; }
+
+  .lang-btn { opacity: 0.45; transition: opacity .2s; }
+  .lang-btn.active { opacity: 1; font-weight: 700; }
+
+  [data-i18n], [data-i18n-block] { display: none; }
+  [data-i18n].active { display: inline; }
+  [data-i18n-block].active { display: block; }
+</style>
+</head>
+
+<body class="bg-surface text-on-surface font-body antialiased">
+
+<header class="fixed top-0 w-full z-50 executive-nav">
+  <nav class="flex justify-between items-center w-full px-6 md:px-8 py-4 max-w-7xl mx-auto">
+    <a href="#" class="logo-lockup logo-sm text-primary">
+      <span class="logo-LSA">LSA</span>
+      <span class="logo-consulting">consulting</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-10">
+      <a class="text-primary font-semibold border-b-2 border-secondary pb-1 text-sm uppercase tracking-widest" href="#">
+        <span data-i18n="nav.home" class="active">Inici</span>
+        <span data-i18n="nav.home" lang="es">Inicio</span>
+        <span data-i18n="nav.home" lang="en">Home</span>
+      </a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest font-medium" href="#services">
+        <span data-i18n="nav.services" class="active">Serveis</span>
+        <span data-i18n="nav.services" lang="es">Servicios</span>
+        <span data-i18n="nav.services" lang="en">Services</span>
+      </a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest font-medium" href="#about">
+        <span data-i18n="nav.about" class="active">Qui som</span>
+        <span data-i18n="nav.about" lang="es">Quiénes somos</span>
+        <span data-i18n="nav.about" lang="en">About us</span>
+      </a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest font-medium" href="#contact">
+        <span data-i18n="nav.contact" class="active">Contacte</span>
+        <span data-i18n="nav.contact" lang="es">Contacto</span>
+        <span data-i18n="nav.contact" lang="en">Contact</span>
+      </a>
+    </div>
+
+    <div class="flex items-center gap-2 text-sm uppercase tracking-widest text-primary">
+      <button class="lang-btn active" data-lang="ca">CA</button>
+      <span class="text-outline-variant">·</span>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <span class="text-outline-variant">·</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="relative h-screen min-h-[700px] flex items-center overflow-hidden pt-20">
+    <div class="absolute inset-0 z-0">
+      <img class="w-full h-full object-cover brightness-[0.6]"
+           src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=2000&q=80"
+           alt="Equip de consultoria en una reunió professional"/>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/40 to-primary/20"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full">
+      <div class="max-w-3xl">
+        <div class="w-20 h-1 bg-secondary mb-8"></div>
+        <h1 class="font-headline text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.05] tracking-tight mb-10">
+          <span data-i18n-block="hero.title" class="active">Gestió i assessorament empresarial al teu costat.</span>
+          <span data-i18n-block="hero.title" lang="es">Gestión y asesoramiento empresarial a tu lado.</span>
+          <span data-i18n-block="hero.title" lang="en">Business management and advisory by your side.</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 mb-12 leading-relaxed max-w-2xl font-light">
+          <span data-i18n-block="hero.subtitle" class="active">Especialistes en assessorament fiscal, comptable i laboral per a autònoms i pimes a Rubí, Sant Cugat i tota l'àrea metropolitana de Barcelona.</span>
+          <span data-i18n-block="hero.subtitle" lang="es">Especialistas en asesoramiento fiscal, contable y laboral para autónomos y pymes en Rubí, Sant Cugat y toda el área metropolitana de Barcelona.</span>
+          <span data-i18n-block="hero.subtitle" lang="en">Specialists in tax, accounting and labour advisory for self-employed professionals and SMEs in Rubí, Sant Cugat and the Barcelona metropolitan area.</span>
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="accent-bg text-white px-10 py-5 font-semibold text-sm uppercase tracking-widest shadow-xl transition-all inline-block">
+            <span data-i18n="cta.contact" class="active">Contacta'ns</span>
+            <span data-i18n="cta.contact" lang="es">Contáctanos</span>
+            <span data-i18n="cta.contact" lang="en">Get in touch</span>
+          </a>
+          <a href="#services" class="bg-white/10 backdrop-blur-md border border-white/40 text-white px-10 py-5 font-semibold text-sm uppercase tracking-widest hover:bg-white/20 transition-colors inline-block">
+            <span data-i18n="cta.services" class="active">Els nostres serveis</span>
+            <span data-i18n="cta.services" lang="es">Nuestros servicios</span>
+            <span data-i18n="cta.services" lang="en">Our services</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-28 md:py-32 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24 items-center">
+      <div class="md:border-l md:border-outline-variant md:pl-8">
+        <span class="text-secondary font-semibold tracking-[0.3em] uppercase text-xs mb-6 block">
+          <span data-i18n="about.eyebrow" class="active">Qui som</span>
+          <span data-i18n="about.eyebrow" lang="es">Quiénes somos</span>
+          <span data-i18n="about.eyebrow" lang="en">About us</span>
+        </span>
+        <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl text-primary leading-tight italic">
+          <span data-i18n-block="about.title" class="active">Un tracte proper, una gestió rigorosa.</span>
+          <span data-i18n-block="about.title" lang="es">Un trato cercano, una gestión rigurosa.</span>
+          <span data-i18n-block="about.title" lang="en">A close relationship, a rigorous practice.</span>
+        </h2>
+      </div>
+      <div>
+        <p class="text-2xl text-primary leading-relaxed mb-8 italic font-headline">
+          <span data-i18n-block="about.quote" class="active">«Més de 15 anys ajudant autònoms i pimes a controlar i fer créixer el seu negoci.»</span>
+          <span data-i18n-block="about.quote" lang="es">«Más de 15 años ayudando a autónomos y pymes a controlar y hacer crecer su negocio.»</span>
+          <span data-i18n-block="about.quote" lang="en">"More than 15 years helping self-employed professionals and SMEs run and grow their businesses."</span>
+        </p>
+        <p class="text-lg text-on-surface-variant leading-relaxed">
+          <span data-i18n-block="about.body" class="active">A LSA Consulting acompanyem el dia a dia del teu negoci amb un model orientat a les necessitats reals de cada client. Treballem amb una cartera diversa —arquitectes, perruqueries, importadors, espais audiovisuals, autoescoles, construcció i molts altres— amb la mateixa proximitat des del primer dia.</span>
+          <span data-i18n-block="about.body" lang="es">En LSA Consulting acompañamos el día a día de tu negocio con un modelo orientado a las necesidades reales de cada cliente. Trabajamos con una cartera diversa —arquitectos, peluquerías, importadores, espacios audiovisuales, autoescuelas, construcción y muchos otros— con la misma cercanía desde el primer día.</span>
+          <span data-i18n-block="about.body" lang="en">At LSA Consulting we support the day-to-day of your business with an approach built around each client's real needs. We work with a varied portfolio — architects, hair salons, import companies, audiovisual studios, driving schools, construction firms and many more — with the same closeness from day one.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="py-28 md:py-32 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <div class="mb-20 text-center">
+        <h2 class="font-headline text-4xl md:text-5xl text-primary mb-6">
+          <span data-i18n="services.title" class="active">Els nostres serveis</span>
+          <span data-i18n="services.title" lang="es">Nuestros servicios</span>
+          <span data-i18n="services.title" lang="en">Our services</span>
+        </h2>
+        <div class="h-1 w-24 bg-secondary mx-auto mb-6"></div>
+        <p class="text-on-surface-variant max-w-2xl mx-auto text-lg">
+          <span data-i18n="services.subtitle" class="active">Tres àrees, una gestió integrada del teu negoci.</span>
+          <span data-i18n="services.subtitle" lang="es">Tres áreas, una gestión integrada de tu negocio.</span>
+          <span data-i18n="services.subtitle" lang="en">Three areas, one integrated practice for your business.</span>
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 border-l border-t border-outline-variant">
+        <div class="group p-10 md:p-12 border-r border-b border-outline-variant hover:bg-primary transition-all duration-500">
+          <div class="mb-10 text-secondary"><span class="material-symbols-outlined text-5xl">account_balance_wallet</span></div>
+          <h3 class="font-headline text-3xl mb-6 text-primary group-hover:text-white transition-colors">
+            <span data-i18n="service.fiscal.title" class="active">Fiscal</span>
+            <span data-i18n="service.fiscal.title" lang="es">Fiscal</span>
+            <span data-i18n="service.fiscal.title" lang="en">Tax</span>
+          </h3>
+          <p class="text-on-surface-variant group-hover:text-white/80 text-lg transition-colors">
+            <span data-i18n-block="service.fiscal.body" class="active">Preparació i liquidació periòdica d'impostos, i assessorament davant l'administració pública en inspeccions i procediments tributaris.</span>
+            <span data-i18n-block="service.fiscal.body" lang="es">Preparación y liquidación periódica de impuestos, y asesoramiento ante la administración pública en inspecciones y procedimientos tributarios.</span>
+            <span data-i18n-block="service.fiscal.body" lang="en">Periodic tax preparation and filing, plus advisory support during public-administration inspections and tax procedures.</span>
+          </p>
+        </div>
+
+        <div class="group p-10 md:p-12 border-r border-b border-outline-variant bg-surface-alt hover:bg-primary transition-all duration-500">
+          <div class="mb-10 text-secondary"><span class="material-symbols-outlined text-5xl">groups</span></div>
+          <h3 class="font-headline text-3xl mb-6 text-primary group-hover:text-white transition-colors">
+            <span data-i18n="service.labor.title" class="active">Laboral</span>
+            <span data-i18n="service.labor.title" lang="es">Laboral</span>
+            <span data-i18n="service.labor.title" lang="en">Labour &amp; HR</span>
+          </h3>
+          <p class="text-on-surface-variant group-hover:text-white/80 text-lg transition-colors">
+            <span data-i18n-block="service.labor.body" class="active">Servei integral en l'àmbit jurídic i laboral: nòmines, altes i baixes, contractes i gestió del dia a dia amb els treballadors.</span>
+            <span data-i18n-block="service.labor.body" lang="es">Servicio integral en el ámbito jurídico y laboral: nóminas, altas y bajas, contratos y gestión del día a día con los trabajadores.</span>
+            <span data-i18n-block="service.labor.body" lang="en">Full legal and labour support: payroll, hires and terminations, contracts, and ongoing employee management.</span>
+          </p>
+        </div>
+
+        <div class="group p-10 md:p-12 border-r border-b border-outline-variant hover:bg-primary transition-all duration-500">
+          <div class="mb-10 text-secondary"><span class="material-symbols-outlined text-5xl">description</span></div>
+          <h3 class="font-headline text-3xl mb-6 text-primary group-hover:text-white transition-colors">
+            <span data-i18n="service.acc.title" class="active">Comptabilitat</span>
+            <span data-i18n="service.acc.title" lang="es">Contabilidad</span>
+            <span data-i18n="service.acc.title" lang="en">Accounting</span>
+          </h3>
+          <p class="text-on-surface-variant group-hover:text-white/80 text-lg transition-colors">
+            <span data-i18n-block="service.acc.body" class="active">Comptes organitzats i al dia: balanços, comptes anuals, declaracions i tota la informació que necessites per decidir amb dades.</span>
+            <span data-i18n-block="service.acc.body" lang="es">Cuentas organizadas y al día: balances, cuentas anuales, declaraciones y toda la información que necesitas para decidir con datos.</span>
+            <span data-i18n-block="service.acc.body" lang="en">Books kept clean and up to date: balance sheets, annual accounts, filings, and the numbers you need to make informed decisions.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-28 md:py-32 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <div class="flex flex-col md:flex-row gap-16 md:gap-20 items-start">
+        <div class="w-full md:w-1/3 md:sticky md:top-32">
+          <h2 class="font-headline text-4xl md:text-5xl mb-8 text-primary">
+            <span data-i18n="why.title" class="active">Per què LSA Consulting?</span>
+            <span data-i18n="why.title" lang="es">¿Por qué LSA Consulting?</span>
+            <span data-i18n="why.title" lang="en">Why LSA Consulting?</span>
+          </h2>
+          <div class="h-1.5 w-20 bg-secondary mb-10"></div>
+          <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+            <span data-i18n-block="why.body" class="active">Treballem amb empreses i autònoms que volen una assessoria propera, accessible i rigorosa. Clients que confien en nosaltres des de fa més d'una dècada.</span>
+            <span data-i18n-block="why.body" lang="es">Trabajamos con empresas y autónomos que quieren una asesoría cercana, accesible y rigurosa. Clientes que confían en nosotros desde hace más de una década.</span>
+            <span data-i18n-block="why.body" lang="en">We work with businesses and self-employed professionals who want a practice that's accessible, close at hand, and rigorous. Many clients have trusted us for over a decade.</span>
+          </p>
+          <div class="bg-primary/5 p-8 border-l-4 border-secondary">
+            <p class="font-headline text-xl italic text-primary">
+              <span data-i18n-block="why.quote" class="active">«Al teu costat en la gestió del dia a dia.»</span>
+              <span data-i18n-block="why.quote" lang="es">«A tu lado en la gestión del día a día.»</span>
+              <span data-i18n-block="why.quote" lang="en">"By your side in the day-to-day."</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="w-full md:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-y-12 gap-x-12">
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-14 h-14 bg-white border border-outline-variant flex items-center justify-center text-primary shadow-sm">
+              <span class="material-symbols-outlined text-3xl">history_edu</span>
+            </div>
+            <div>
+              <h4 class="font-headline text-2xl mb-3 text-primary">
+                <span data-i18n="why.f1.title" class="active">Més de 15 anys d'experiència</span>
+                <span data-i18n="why.f1.title" lang="es">Más de 15 años de experiencia</span>
+                <span data-i18n="why.f1.title" lang="en">15+ years of experience</span>
+              </h4>
+              <p class="text-on-surface-variant leading-relaxed">
+                <span data-i18n-block="why.f1.body" class="active">Coneixement profund del teixit empresarial local del Vallès i l'àrea metropolitana de Barcelona.</span>
+                <span data-i18n-block="why.f1.body" lang="es">Conocimiento profundo del tejido empresarial local del Vallès y el área metropolitana de Barcelona.</span>
+                <span data-i18n-block="why.f1.body" lang="en">Deep knowledge of the local business landscape across Vallès and the Barcelona metropolitan area.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-14 h-14 bg-white border border-outline-variant flex items-center justify-center text-primary shadow-sm">
+              <span class="material-symbols-outlined text-3xl">person_pin</span>
+            </div>
+            <div>
+              <h4 class="font-headline text-2xl mb-3 text-primary">
+                <span data-i18n="why.f2.title" class="active">Tracte personalitzat</span>
+                <span data-i18n="why.f2.title" lang="es">Trato personalizado</span>
+                <span data-i18n="why.f2.title" lang="en">Personal attention</span>
+              </h4>
+              <p class="text-on-surface-variant leading-relaxed">
+                <span data-i18n-block="why.f2.body" class="active">Ens adaptem a cada negoci. No fem servir plantilles; escoltem què necessites i ho resolem.</span>
+                <span data-i18n-block="why.f2.body" lang="es">Nos adaptamos a cada negocio. No usamos plantillas; escuchamos lo que necesitas y lo resolvemos.</span>
+                <span data-i18n-block="why.f2.body" lang="en">We adapt to each business. No templates — we listen, then solve.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-14 h-14 bg-white border border-outline-variant flex items-center justify-center text-primary shadow-sm">
+              <span class="material-symbols-outlined text-3xl">verified_user</span>
+            </div>
+            <div>
+              <h4 class="font-headline text-2xl mb-3 text-primary">
+                <span data-i18n="why.f3.title" class="active">Rigor i compliment</span>
+                <span data-i18n="why.f3.title" lang="es">Rigor y cumplimiento</span>
+                <span data-i18n="why.f3.title" lang="en">Rigour and compliance</span>
+              </h4>
+              <p class="text-on-surface-variant leading-relaxed">
+                <span data-i18n-block="why.f3.body" class="active">Termini, exactitud i seguretat en cada tràmit amb Hisenda, Seguretat Social i administracions.</span>
+                <span data-i18n-block="why.f3.body" lang="es">Plazos, exactitud y seguridad en cada trámite con Hacienda, Seguridad Social y administraciones.</span>
+                <span data-i18n-block="why.f3.body" lang="en">On-time, accurate, and secure handling of every filing with tax and social-security authorities.</span>
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-14 h-14 bg-white border border-outline-variant flex items-center justify-center text-primary shadow-sm">
+              <span class="material-symbols-outlined text-3xl">trending_up</span>
+            </div>
+            <div>
+              <h4 class="font-headline text-2xl mb-3 text-primary">
+                <span data-i18n="why.f4.title" class="active">Visió de creixement</span>
+                <span data-i18n="why.f4.title" lang="es">Visión de crecimiento</span>
+                <span data-i18n="why.f4.title" lang="en">Growth perspective</span>
+              </h4>
+              <p class="text-on-surface-variant leading-relaxed">
+                <span data-i18n-block="why.f4.body" class="active">Més enllà de portar els comptes: t'ajudem a entendre el teu negoci i a prendre millors decisions.</span>
+                <span data-i18n-block="why.f4.body" lang="es">Más allá de llevar las cuentas: te ayudamos a entender tu negocio y a tomar mejores decisiones.</span>
+                <span data-i18n-block="why.f4.body" lang="en">Beyond keeping the books — we help you understand your business and make better decisions.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 px-6 md:px-8 bg-white">
+    <div class="max-w-7xl mx-auto relative overflow-hidden py-20 md:py-24 px-8 md:px-12 navy-bg">
+      <div class="absolute top-0 left-0 w-24 h-1 bg-secondary"></div>
+      <div class="absolute bottom-0 right-0 w-24 h-1 bg-secondary"></div>
+
+      <div class="relative z-10 max-w-4xl mx-auto text-center">
+        <h2 class="font-headline text-4xl md:text-6xl text-white mb-8 leading-tight">
+          <span data-i18n-block="contact.title" class="active">Posa't en contacte amb nosaltres</span>
+          <span data-i18n-block="contact.title" lang="es">Ponte en contacto con nosotros</span>
+          <span data-i18n-block="contact.title" lang="en">Get in touch</span>
+        </h2>
+        <p class="text-xl text-white/80 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+          <span data-i18n-block="contact.body" class="active">Truca'ns, escriu-nos o vine a veure'ns a Rubí. Una primera conversa sense compromís per veure com et podem ajudar.</span>
+          <span data-i18n-block="contact.body" lang="es">Llámanos, escríbenos o ven a vernos a Rubí. Una primera conversación sin compromiso para ver cómo podemos ayudarte.</span>
+          <span data-i18n-block="contact.body" lang="en">Call, write, or stop by our office in Rubí. A first no-obligation conversation to see how we can help.</span>
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-white text-left max-w-4xl mx-auto">
+          <div class="border-t border-white/20 pt-6">
+            <div class="text-xs uppercase tracking-[0.2em] text-secondary mb-3 font-semibold">
+              <span data-i18n="contact.phone.label" class="active">Telèfon</span>
+              <span data-i18n="contact.phone.label" lang="es">Teléfono</span>
+              <span data-i18n="contact.phone.label" lang="en">Phone</span>
+            </div>
+            <a href="tel:+34620919536" class="block text-lg hover:text-secondary transition-colors">620 919 536</a>
+            <a href="tel:+34663281784" class="block text-lg hover:text-secondary transition-colors">663 281 784</a>
+          </div>
+          <div class="border-t border-white/20 pt-6">
+            <div class="text-xs uppercase tracking-[0.2em] text-secondary mb-3 font-semibold">
+              <span data-i18n="contact.email.label" class="active">Correu</span>
+              <span data-i18n="contact.email.label" lang="es">Correo</span>
+              <span data-i18n="contact.email.label" lang="en">Email</span>
+            </div>
+            <a href="mailto:info@lsa-consulting.com" class="text-lg hover:text-secondary transition-colors break-all">info@lsa-consulting.com</a>
+          </div>
+          <div class="border-t border-white/20 pt-6">
+            <div class="text-xs uppercase tracking-[0.2em] text-secondary mb-3 font-semibold">
+              <span data-i18n="contact.hours.label" class="active">Horari</span>
+              <span data-i18n="contact.hours.label" lang="es">Horario</span>
+              <span data-i18n="contact.hours.label" lang="en">Hours</span>
+            </div>
+            <p class="text-lg">
+              <span data-i18n-block="contact.hours.body" class="active">Dilluns a divendres<br/>9 a 17 h</span>
+              <span data-i18n-block="contact.hours.body" lang="es">Lunes a viernes<br/>9 a 17 h</span>
+              <span data-i18n-block="contact.hours.body" lang="en">Mon – Fri<br/>9 am – 5 pm</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://wa.me/34663281784" target="_blank" rel="noopener" class="accent-bg text-white px-10 py-5 font-semibold text-sm uppercase tracking-[0.2em] shadow-2xl transition-transform hover:scale-105 inline-flex items-center justify-center gap-3">
+            <span class="material-symbols-outlined">chat</span>
+            <span data-i18n="contact.whatsapp" class="active">WhatsApp</span>
+            <span data-i18n="contact.whatsapp" lang="es">WhatsApp</span>
+            <span data-i18n="contact.whatsapp" lang="en">WhatsApp</span>
+          </a>
+          <a href="mailto:info@lsa-consulting.com" class="bg-transparent border border-white/40 text-white px-10 py-5 font-semibold text-sm uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-all inline-flex items-center justify-center gap-3">
+            <span class="material-symbols-outlined">mail</span>
+            <span data-i18n="contact.email.cta" class="active">Envia'ns un correu</span>
+            <span data-i18n="contact.email.cta" lang="es">Envíanos un correo</span>
+            <span data-i18n="contact.email.cta" lang="en">Send us an email</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="w-full navy-bg text-white">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 w-full px-6 md:px-8 py-16 md:py-20 max-w-7xl mx-auto border-b border-white/10">
+    <div>
+      <div class="logo-lockup logo-lg text-white mb-8">
+        <span class="logo-LSA">LSA</span>
+        <span class="logo-consulting">consulting</span>
+      </div>
+      <p class="text-white/60 text-sm leading-relaxed mb-6">
+        <span data-i18n-block="footer.tagline" class="active">Assessorament fiscal, comptable i laboral per a autònoms i pimes. Més de 15 anys al teu costat.</span>
+        <span data-i18n-block="footer.tagline" lang="es">Asesoramiento fiscal, contable y laboral para autónomos y pymes. Más de 15 años a tu lado.</span>
+        <span data-i18n-block="footer.tagline" lang="en">Tax, accounting and labour advisory for self-employed professionals and SMEs. By your side for over 15 years.</span>
+      </p>
+      <div class="flex gap-3">
+        <a href="https://www.linkedin.com/in/llu%C3%AFsa-set%C3%B3-5a982217/" target="_blank" rel="noopener" aria-label="LinkedIn"
+           class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/34663281784" target="_blank" rel="noopener" aria-label="WhatsApp"
+           class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="font-headline text-white text-lg mb-6 uppercase tracking-[0.1em]">
+        <span data-i18n="footer.contact" class="active">Contacte</span>
+        <span data-i18n="footer.contact" lang="es">Contacto</span>
+        <span data-i18n="footer.contact" lang="en">Contact</span>
+      </h4>
+      <ul class="space-y-3 text-white/70 text-sm">
+        <li><a href="tel:+34620919536" class="hover:text-secondary transition-colors">620 919 536</a></li>
+        <li><a href="tel:+34663281784" class="hover:text-secondary transition-colors">663 281 784</a></li>
+        <li><a href="mailto:info@lsa-consulting.com" class="hover:text-secondary transition-colors">info@lsa-consulting.com</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-headline text-white text-lg mb-6 uppercase tracking-[0.1em]">
+        <span data-i18n="footer.office" class="active">Oficina</span>
+        <span data-i18n="footer.office" lang="es">Oficina</span>
+        <span data-i18n="footer.office" lang="en">Office</span>
+      </h4>
+      <p class="text-white/70 text-sm leading-relaxed mb-3">
+        Carretera de Sant Cugat, 63 A<br/>
+        Planta 2, despatx 3<br/>
+        08195 Rubí, Barcelona
+      </p>
+      <a href="https://www.google.com/maps/search/?api=1&query=41.485219,2.042365" target="_blank" rel="noopener"
+         class="text-secondary text-xs uppercase tracking-widest hover:underline">
+        <span data-i18n="footer.map" class="active">Veure al mapa</span>
+        <span data-i18n="footer.map" lang="es">Ver en el mapa</span>
+        <span data-i18n="footer.map" lang="en">View on map</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-white/40 text-[10px] uppercase tracking-[0.3em]">© 2026 LSA Consulting</p>
+    <span class="text-white/40 text-[10px] uppercase tracking-[0.3em]">Rubí · Barcelona</span>
+  </div>
+</footer>
+
+<script>
+  const setLang = (lang) => {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n], [data-i18n-block]').forEach(el => {
+      const elLang = el.getAttribute('lang') || 'ca';
+      el.classList.toggle('active', elLang === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    try { localStorage.setItem('lsa-lang', lang); } catch (e) {}
+  };
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
+  try {
+    const saved = localStorage.getItem('lsa-lang');
+    if (saved && ['ca','es','en'].includes(saved)) {
+      setLang(saved);
+    }
+    // First-time visitors default to Catalan (already set in markup)
+  } catch (e) {}
+</script>
+
+</body>
+</html>
