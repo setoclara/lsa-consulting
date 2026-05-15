@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html class="light" lang="ca">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fiscal | LSA Consulting</title>
+<meta name="description" content="Assessorament fiscal a Rubí. Preparació i liquidació d'impostos, IVA, IRPF, Impost de Societats i suport en inspeccions tributàries.">
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Italiana&family=Source+Sans+3:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "primary": "#283583",
+          "primary-dark": "#1d2761",
+          "secondary": "#f39200",
+          "secondary-hover": "#d88200",
+          "surface": "#f9f9f9",
+          "surface-alt": "#f3f3f3",
+          "on-surface": "#1b1b1b",
+          "on-surface-variant": "#454651",
+          "outline-variant": "#d6d6dd",
+        },
+        borderRadius: { DEFAULT: "0rem", lg: "0rem", xl: "0rem", full: "9999px" },
+        fontFamily: {
+          headline: ['"DM Serif Display"', "serif"],
+          logo: ['"Italiana"', "serif"],
+          body: ['"Source Sans 3"', "sans-serif"],
+        },
+      },
+    },
+  }
+</script>
+
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+  .executive-nav { background: rgba(255, 255, 255, 0.95); border-bottom: 1px solid #e2e2e2; backdrop-filter: saturate(180%) blur(10px); }
+  .accent-bg { background: #f39200; }
+  .accent-bg:hover { background: #d88200; }
+  .navy-bg { background-color: #283583; }
+  html { scroll-behavior: smooth; }
+
+  .logo-lockup { display: inline-flex; flex-direction: column; align-items: stretch; line-height: 1; }
+  .logo-LSA { font-family: 'Italiana', serif; font-weight: 400; letter-spacing: 0.04em; line-height: 0.85; }
+  .logo-consulting { font-family: 'Source Sans 3', sans-serif; font-weight: 400; text-transform: lowercase; letter-spacing: 0.02em; text-align: right; line-height: 1; }
+  .logo-sm .logo-LSA { font-size: 2rem; }
+  .logo-sm .logo-consulting { font-size: 0.7rem; margin-top: 0.15rem; }
+  .logo-lg .logo-LSA { font-size: 4rem; }
+  .logo-lg .logo-consulting { font-size: 1.1rem; margin-top: 0.25rem; }
+
+  .lang-btn { opacity: 0.45; transition: opacity .2s; }
+  .lang-btn.active { opacity: 1; font-weight: 700; }
+
+  [data-i18n], [data-i18n-block] { display: none; }
+  [data-i18n].active { display: inline; }
+  [data-i18n-block].active { display: block; }
+</style>
+</head>
+
+<body class="bg-surface text-on-surface font-body antialiased">
+
+<header class="fixed top-0 w-full z-50 executive-nav">
+  <nav class="flex justify-between items-center w-full px-6 md:px-8 py-4 max-w-7xl mx-auto">
+    <a href="index.html" class="block">
+      <img src="logo.png" alt="LSA Consulting" class="h-12 w-auto"/>
+    </a>
+
+    <div class="hidden md:flex items-center gap-10">
+      <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest font-medium" href="index.html">
+        <span data-i18n="nav.home" class="active">Inici</span>
+        <span data-i18n="nav.home" lang="es">Inicio</span>
+        <span data-i18n="nav.home" lang="en">Home</span>
+      </a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest font-medium" href="index.html#about">
+        <span data-i18n="nav.about" class="active">Qui som</span>
+        <span data-i18n="nav.about" lang="es">Quiénes somos</span>
+        <span data-i18n="nav.about" lang="en">About us</span>
+      </a>
+      <a class="text-primary font-semibold border-b-2 border-secondary pb-1 text-sm uppercase tracking-widest" href="index.html#services">
+        <span data-i18n="nav.services" class="active">Serveis</span>
+        <span data-i18n="nav.services" lang="es">Servicios</span>
+        <span data-i18n="nav.services" lang="en">Services</span>
+      </a>
+      <a class="text-on-surface-variant hover:text-primary transition-colors text-sm uppercase tracking-widest font-medium" href="index.html#contact">
+        <span data-i18n="nav.contact" class="active">Contacte</span>
+        <span data-i18n="nav.contact" lang="es">Contacto</span>
+        <span data-i18n="nav.contact" lang="en">Contact</span>
+      </a>
+    </div>
+
+    <div class="flex items-center gap-2 text-sm uppercase tracking-widest text-primary">
+      <button class="lang-btn active" data-lang="ca">CA</button>
+      <span class="text-outline-variant">·</span>
+      <button class="lang-btn" data-lang="es">ES</button>
+      <span class="text-outline-variant">·</span>
+      <button class="lang-btn" data-lang="en">EN</button>
+    </div>
+  </nav>
+</header>
+
+<main class="pt-24 md:pt-28">
+
+  <!-- Service hero -->
+  <section class="relative h-[60vh] min-h-[450px] flex items-end overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img class="w-full h-full object-cover brightness-[0.55]"
+           src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=2000&q=80"
+           alt="Documents fiscals i càlculs"/>
+      <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-primary/10"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full pb-16 md:pb-24">
+      <div class="flex items-center gap-3 mb-6">
+        <a href="index.html" class="text-white/70 hover:text-secondary transition-colors text-sm uppercase tracking-widest">
+          <span data-i18n="breadcrumb.home" class="active">Inici</span>
+          <span data-i18n="breadcrumb.home" lang="es">Inicio</span>
+          <span data-i18n="breadcrumb.home" lang="en">Home</span>
+        </a>
+        <span class="text-white/50">›</span>
+        <span class="text-secondary text-sm uppercase tracking-widest font-semibold">
+          <span data-i18n="breadcrumb.fiscal" class="active">Fiscal</span>
+          <span data-i18n="breadcrumb.fiscal" lang="es">Fiscal</span>
+          <span data-i18n="breadcrumb.fiscal" lang="en">Tax</span>
+        </span>
+      </div>
+      <div class="w-20 h-1 bg-secondary mb-6"></div>
+      <h1 class="font-headline text-5xl md:text-7xl lg:text-8xl text-white leading-[1.05] tracking-tight max-w-4xl">
+        <span data-i18n-block="page.title" class="active">Fiscal</span>
+        <span data-i18n-block="page.title" lang="es">Fiscal</span>
+        <span data-i18n-block="page.title" lang="en">Tax</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-white/90 mt-6 max-w-2xl font-light">
+        <span data-i18n-block="page.subtitle" class="active">Preparació i liquidació periòdica dels teus impostos amb total seguretat.</span>
+        <span data-i18n-block="page.subtitle" lang="es">Preparación y liquidación periódica de tus impuestos con total seguridad.</span>
+        <span data-i18n-block="page.subtitle" lang="en">Periodic preparation and filing of your taxes, handled with full peace of mind.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class="py-20 md:py-28 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+      <div class="md:col-span-1">
+        <span class="text-secondary font-semibold tracking-[0.3em] uppercase text-xs mb-4 block">
+          <span data-i18n="intro.eyebrow" class="active">Què oferim</span>
+          <span data-i18n="intro.eyebrow" lang="es">Qué ofrecemos</span>
+          <span data-i18n="intro.eyebrow" lang="en">What we offer</span>
+        </span>
+        <h2 class="font-headline text-3xl md:text-4xl text-primary leading-tight italic">
+          <span data-i18n-block="intro.title" class="active">Compliment fiscal, sense sorpreses.</span>
+          <span data-i18n-block="intro.title" lang="es">Cumplimiento fiscal, sin sorpresas.</span>
+          <span data-i18n-block="intro.title" lang="en">Tax compliance, no surprises.</span>
+        </h2>
+      </div>
+      <div class="md:col-span-2">
+        <p class="text-lg text-on-surface-variant leading-relaxed mb-6">
+          <span data-i18n-block="intro.p1" class="active">Gestionem tot el calendari fiscal del teu negoci: declaracions trimestrals, anuals, models informatius i tot el que necessites per estar al dia amb Hisenda. Tant si ets autònom com si gestiones una societat, tindràs les obligacions resoltes a temps i sense errors.</span>
+          <span data-i18n-block="intro.p1" lang="es">Gestionamos todo el calendario fiscal de tu negocio: declaraciones trimestrales, anuales, modelos informativos y todo lo necesario para estar al día con Hacienda. Tanto si eres autónomo como si gestionas una sociedad, tendrás las obligaciones resueltas a tiempo y sin errores.</span>
+          <span data-i18n-block="intro.p1" lang="en">We handle your entire tax calendar — quarterly returns, annual filings, information forms and everything needed to stay current with the Spanish tax authority. Whether you're a self-employed professional or running a company, your obligations get filed on time and accurately.</span>
+        </p>
+        <p class="text-lg text-on-surface-variant leading-relaxed">
+          <span data-i18n-block="intro.p2" class="active">També t'acompanyem davant l'administració pública en inspeccions, requeriments i procediments tributaris. Sempre amb una persona de referència que coneix el teu cas.</span>
+          <span data-i18n-block="intro.p2" lang="es">También te acompañamos ante la administración pública en inspecciones, requerimientos y procedimientos tributarios. Siempre con una persona de referencia que conoce tu caso.</span>
+          <span data-i18n-block="intro.p2" lang="en">We also represent you before the tax administration during inspections, information requests and tax procedures — always with a dedicated contact who knows your case.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service detail blocks -->
+  <section class="py-20 md:py-28 bg-white">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <h2 class="font-headline text-3xl md:text-4xl text-primary mb-16 text-center">
+        <span data-i18n="detail.title" class="active">Què inclou el servei fiscal</span>
+        <span data-i18n="detail.title" lang="es">Qué incluye el servicio fiscal</span>
+        <span data-i18n="detail.title" lang="en">What the tax service covers</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-outline-variant border border-outline-variant">
+        <!-- Tax filings -->
+        <div class="bg-white p-8 md:p-10">
+          <div class="flex items-start gap-4 mb-4">
+            <span class="font-headline text-3xl text-secondary italic leading-none">01</span>
+            <span class="material-symbols-outlined text-secondary text-3xl">assignment_turned_in</span>
+          </div>
+          <h3 class="font-headline text-2xl text-primary mb-3">
+            <span data-i18n="d1.title" class="active">Declaracions periòdiques</span>
+            <span data-i18n="d1.title" lang="es">Declaraciones periódicas</span>
+            <span data-i18n="d1.title" lang="en">Periodic filings</span>
+          </h3>
+          <p class="text-on-surface-variant leading-relaxed">
+            <span data-i18n-block="d1.body" class="active">IVA trimestral (model 303), retencions (model 111 i 115), pagaments fraccionats (130 / 131) i declaracions anuals (390, 190, 180).</span>
+            <span data-i18n-block="d1.body" lang="es">IVA trimestral (modelo 303), retenciones (modelo 111 y 115), pagos fraccionados (130 / 131) y declaraciones anuales (390, 190, 180).</span>
+            <span data-i18n-block="d1.body" lang="en">Quarterly VAT (form 303), withholdings (forms 111 and 115), instalment payments (130 / 131) and annual returns (390, 190, 180).</span>
+          </p>
+        </div>
+
+        <!-- Income tax -->
+        <div class="bg-white p-8 md:p-10">
+          <div class="flex items-start gap-4 mb-4">
+            <span class="font-headline text-3xl text-secondary italic leading-none">02</span>
+            <span class="material-symbols-outlined text-secondary text-3xl">request_quote</span>
+          </div>
+          <h3 class="font-headline text-2xl text-primary mb-3">
+            <span data-i18n="d2.title" class="active">IRPF i renda</span>
+            <span data-i18n="d2.title" lang="es">IRPF y renta</span>
+            <span data-i18n="d2.title" lang="en">Personal income tax</span>
+          </h3>
+          <p class="text-on-surface-variant leading-relaxed">
+            <span data-i18n-block="d2.body" class="active">Declaració de la renda d'autònoms i particulars, planificació anual i revisió per identificar deduccions aplicables.</span>
+            <span data-i18n-block="d2.body" lang="es">Declaración de la renta de autónomos y particulares, planificación anual y revisión para identificar deducciones aplicables.</span>
+            <span data-i18n-block="d2.body" lang="en">Personal income tax returns for self-employed professionals and individuals, annual planning, and review to spot applicable deductions.</span>
+          </p>
+        </div>
+
+        <!-- Corporate tax -->
+        <div class="bg-white p-8 md:p-10">
+          <div class="flex items-start gap-4 mb-4">
+            <span class="font-headline text-3xl text-secondary italic leading-none">03</span>
+            <span class="material-symbols-outlined text-secondary text-3xl">domain</span>
+          </div>
+          <h3 class="font-headline text-2xl text-primary mb-3">
+            <span data-i18n="d3.title" class="active">Impost de Societats</span>
+            <span data-i18n="d3.title" lang="es">Impuesto de Sociedades</span>
+            <span data-i18n="d3.title" lang="en">Corporate tax</span>
+          </h3>
+          <p class="text-on-surface-variant leading-relaxed">
+            <span data-i18n-block="d3.body" class="active">Preparació i presentació del model 200, pagaments fraccionats (model 202) i optimització fiscal per a SLs i societats.</span>
+            <span data-i18n-block="d3.body" lang="es">Preparación y presentación del modelo 200, pagos fraccionados (modelo 202) y optimización fiscal para SLs y sociedades.</span>
+            <span data-i18n-block="d3.body" lang="en">Form 200 preparation and filing, instalment payments (form 202), and tax optimisation for limited companies.</span>
+          </p>
+        </div>
+
+        <!-- Modelos informativos -->
+        <div class="bg-white p-8 md:p-10">
+          <div class="flex items-start gap-4 mb-4">
+            <span class="font-headline text-3xl text-secondary italic leading-none">04</span>
+            <span class="material-symbols-outlined text-secondary text-3xl">summarize</span>
+          </div>
+          <h3 class="font-headline text-2xl text-primary mb-3">
+            <span data-i18n="d4.title" class="active">Models informatius</span>
+            <span data-i18n="d4.title" lang="es">Modelos informativos</span>
+            <span data-i18n="d4.title" lang="en">Information forms</span>
+          </h3>
+          <p class="text-on-surface-variant leading-relaxed">
+            <span data-i18n-block="d4.body" class="active">Models 347 (operacions amb tercers), 349 (operacions intracomunitàries) i 720 (béns a l'estranger).</span>
+            <span data-i18n-block="d4.body" lang="es">Modelos 347 (operaciones con terceros), 349 (operaciones intracomunitarias) y 720 (bienes en el extranjero).</span>
+            <span data-i18n-block="d4.body" lang="en">Forms 347 (transactions with third parties), 349 (intra-EU transactions) and 720 (foreign-held assets).</span>
+          </p>
+        </div>
+
+        <!-- Inspections -->
+        <div class="bg-white p-8 md:p-10">
+          <div class="flex items-start gap-4 mb-4">
+            <span class="font-headline text-3xl text-secondary italic leading-none">05</span>
+            <span class="material-symbols-outlined text-secondary text-3xl">gavel</span>
+          </div>
+          <h3 class="font-headline text-2xl text-primary mb-3">
+            <span data-i18n="d5.title" class="active">Inspeccions i requeriments</span>
+            <span data-i18n="d5.title" lang="es">Inspecciones y requerimientos</span>
+            <span data-i18n="d5.title" lang="en">Inspections &amp; requests</span>
+          </h3>
+          <p class="text-on-surface-variant leading-relaxed">
+            <span data-i18n-block="d5.body" class="active">Representació davant Hisenda i Agència Tributària en procediments tributaris, requeriments d'informació i inspeccions.</span>
+            <span data-i18n-block="d5.body" lang="es">Representación ante Hacienda y la Agencia Tributaria en procedimientos tributarios, requerimientos de información e inspecciones.</span>
+            <span data-i18n-block="d5.body" lang="en">Representation before the Spanish tax authority in tax procedures, information requests, and inspections.</span>
+          </p>
+        </div>
+
+        <!-- Planning -->
+        <div class="bg-white p-8 md:p-10">
+          <div class="flex items-start gap-4 mb-4">
+            <span class="font-headline text-3xl text-secondary italic leading-none">06</span>
+            <span class="material-symbols-outlined text-secondary text-3xl">trending_up</span>
+          </div>
+          <h3 class="font-headline text-2xl text-primary mb-3">
+            <span data-i18n="d6.title" class="active">Planificació fiscal</span>
+            <span data-i18n="d6.title" lang="es">Planificación fiscal</span>
+            <span data-i18n="d6.title" lang="en">Tax planning</span>
+          </h3>
+          <p class="text-on-surface-variant leading-relaxed">
+            <span data-i18n-block="d6.body" class="active">Anàlisi de la teva situació fiscal per anticipar obligacions, aprofitar deduccions i prendre decisions amb visió a llarg termini.</span>
+            <span data-i18n-block="d6.body" lang="es">Análisis de tu situación fiscal para anticipar obligaciones, aprovechar deducciones y tomar decisiones con visión a largo plazo.</span>
+            <span data-i18n-block="d6.body" lang="en">A review of your tax position to anticipate obligations, capture available deductions, and make decisions with a long-term view.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Other services -->
+  <section class="py-20 md:py-28 bg-surface">
+    <div class="max-w-7xl mx-auto px-6 md:px-8">
+      <h2 class="font-headline text-3xl md:text-4xl text-primary mb-12 text-center">
+        <span data-i18n="other.title" class="active">Altres serveis</span>
+        <span data-i18n="other.title" lang="es">Otros servicios</span>
+        <span data-i18n="other.title" lang="en">Other services</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant border border-outline-variant">
+        <a href="laboral.html" class="group bg-white p-10 hover:bg-primary transition-all duration-500 block">
+          <div class="mb-6 text-secondary"><span class="material-symbols-outlined text-4xl">groups</span></div>
+          <h3 class="font-headline text-2xl mb-3 text-primary group-hover:text-white transition-colors">
+            <span data-i18n="other.labor.title" class="active">Laboral</span>
+            <span data-i18n="other.labor.title" lang="es">Laboral</span>
+            <span data-i18n="other.labor.title" lang="en">Labour &amp; HR</span>
+          </h3>
+          <p class="text-on-surface-variant group-hover:text-white/80 transition-colors">
+            <span data-i18n-block="other.labor.body" class="active">Nòmines, contractes, altes i baixes a la Seguretat Social i gestió integral dels treballadors.</span>
+            <span data-i18n-block="other.labor.body" lang="es">Nóminas, contratos, altas y bajas en la Seguridad Social y gestión integral de los trabajadores.</span>
+            <span data-i18n-block="other.labor.body" lang="en">Payroll, contracts, social-security registrations and full employee management.</span>
+          </p>
+        </a>
+        <a href="comptabilitat.html" class="group bg-white p-10 hover:bg-primary transition-all duration-500 block">
+          <div class="mb-6 text-secondary"><span class="material-symbols-outlined text-4xl">description</span></div>
+          <h3 class="font-headline text-2xl mb-3 text-primary group-hover:text-white transition-colors">
+            <span data-i18n="other.acc.title" class="active">Comptabilitat</span>
+            <span data-i18n="other.acc.title" lang="es">Contabilidad</span>
+            <span data-i18n="other.acc.title" lang="en">Accounting</span>
+          </h3>
+          <p class="text-on-surface-variant group-hover:text-white/80 transition-colors">
+            <span data-i18n-block="other.acc.body" class="active">Balanços, comptes anuals, declaracions i la informació que necessites per decidir amb dades.</span>
+            <span data-i18n-block="other.acc.body" lang="es">Balances, cuentas anuales, declaraciones y la información que necesitas para decidir con datos.</span>
+            <span data-i18n-block="other.acc.body" lang="en">Balance sheets, annual accounts, filings, and the data you need to make decisions.</span>
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-24 px-6 md:px-8 bg-white">
+    <div class="max-w-7xl mx-auto relative overflow-hidden py-16 md:py-20 px-8 md:px-12 navy-bg text-center">
+      <div class="absolute top-0 left-0 w-24 h-1 bg-secondary"></div>
+      <div class="absolute bottom-0 right-0 w-24 h-1 bg-secondary"></div>
+      <h2 class="font-headline text-3xl md:text-5xl text-white mb-6 leading-tight">
+        <span data-i18n-block="cta.title" class="active">Tens dubtes sobre la teva fiscalitat?</span>
+        <span data-i18n-block="cta.title" lang="es">¿Tienes dudas sobre tu fiscalidad?</span>
+        <span data-i18n-block="cta.title" lang="en">Questions about your tax situation?</span>
+      </h2>
+      <p class="text-lg text-white/80 mb-10 max-w-xl mx-auto font-light">
+        <span data-i18n-block="cta.body" class="active">Truca'ns per una primera conversa sense compromís.</span>
+        <span data-i18n-block="cta.body" lang="es">Llámanos para una primera conversación sin compromiso.</span>
+        <span data-i18n-block="cta.body" lang="en">Call us for an initial no-obligation chat.</span>
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://wa.me/34663281784" target="_blank" rel="noopener" class="accent-bg text-white px-10 py-4 font-semibold text-sm uppercase tracking-[0.2em] inline-flex items-center justify-center gap-3">
+          <span class="material-symbols-outlined">chat</span> WhatsApp
+        </a>
+        <a href="mailto:info@lsa-consulting.com" class="bg-transparent border border-white/40 text-white px-10 py-4 font-semibold text-sm uppercase tracking-[0.2em] hover:bg-white hover:text-primary transition-all inline-flex items-center justify-center gap-3">
+          <span class="material-symbols-outlined">mail</span>
+          <span data-i18n="cta.email" class="active">Envia'ns un correu</span>
+          <span data-i18n="cta.email" lang="es">Envíanos un correo</span>
+          <span data-i18n="cta.email" lang="en">Send us an email</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="w-full navy-bg text-white">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 w-full px-6 md:px-8 py-16 md:py-20 max-w-7xl mx-auto border-b border-white/10">
+    <div>
+      <img src="logo.png" alt="LSA Consulting" class="h-20 w-auto mb-8 brightness-0 invert"/>
+      <p class="text-white/60 text-sm leading-relaxed mb-6">
+        <span data-i18n-block="footer.tagline" class="active">Assessorament fiscal, comptable i laboral per a autònoms i pimes. Més de 15 anys al teu costat.</span>
+        <span data-i18n-block="footer.tagline" lang="es">Asesoramiento fiscal, contable y laboral para autónomos y pymes. Más de 15 años a tu lado.</span>
+        <span data-i18n-block="footer.tagline" lang="en">Tax, accounting and labour advisory for self-employed professionals and SMEs. By your side for over 15 years.</span>
+      </p>
+      <div class="flex gap-3">
+        <a href="https://www.linkedin.com/in/llu%C3%AFsa-set%C3%B3-5a982217/" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.852 3.37-1.852 3.601 0 4.267 2.37 4.267 5.455v6.288zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/34663281784" target="_blank" rel="noopener" aria-label="WhatsApp" class="w-10 h-10 border border-white/20 flex items-center justify-center hover:bg-secondary hover:border-secondary transition-all">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h4 class="font-headline text-white text-lg mb-6 uppercase tracking-[0.1em]">
+        <span data-i18n="footer.contact" class="active">Contacte</span>
+        <span data-i18n="footer.contact" lang="es">Contacto</span>
+        <span data-i18n="footer.contact" lang="en">Contact</span>
+      </h4>
+      <ul class="space-y-3 text-white/70 text-sm">
+        <li><a href="tel:+34620919536" class="hover:text-secondary transition-colors">620 919 536</a></li>
+        <li><a href="tel:+34663281784" class="hover:text-secondary transition-colors">663 281 784</a></li>
+        <li><a href="mailto:info@lsa-consulting.com" class="hover:text-secondary transition-colors">info@lsa-consulting.com</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4 class="font-headline text-white text-lg mb-6 uppercase tracking-[0.1em]">
+        <span data-i18n="footer.office" class="active">Oficina</span>
+        <span data-i18n="footer.office" lang="es">Oficina</span>
+        <span data-i18n="footer.office" lang="en">Office</span>
+      </h4>
+      <p class="text-white/70 text-sm leading-relaxed mb-3">
+        Carretera de Sant Cugat, 63 A<br/>
+        Planta 2, despatx 3<br/>
+        08195 Rubí, Barcelona
+      </p>
+      <a href="https://www.google.com/maps/search/?api=1&query=41.485219,2.042365" target="_blank" rel="noopener" class="text-secondary text-xs uppercase tracking-widest hover:underline">
+        <span data-i18n="footer.map" class="active">Veure al mapa</span>
+        <span data-i18n="footer.map" lang="es">Ver en el mapa</span>
+        <span data-i18n="footer.map" lang="en">View on map</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+    <p class="text-white/40 text-[10px] uppercase tracking-[0.3em]">© 2026 LSA Consulting</p>
+    <span class="text-white/40 text-[10px] uppercase tracking-[0.3em]">Rubí · Barcelona</span>
+  </div>
+</footer>
+
+<script>
+  const setLang = (lang) => {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n], [data-i18n-block]').forEach(el => {
+      const elLang = el.getAttribute('lang') || 'ca';
+      el.classList.toggle('active', elLang === lang);
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    try { localStorage.setItem('lsa-lang', lang); } catch (e) {}
+  };
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+  try {
+    const saved = localStorage.getItem('lsa-lang');
+    if (saved && ['ca','es','en'].includes(saved)) setLang(saved);
+  } catch (e) {}
+</script>
+
+</body>
+</html>
