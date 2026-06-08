@@ -61,6 +61,16 @@
   [data-i18n], [data-i18n-block] { display: none; }
   [data-i18n].active { display: inline; }
   [data-i18n-block].active { display: block; }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+  }
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 </style>
 </head>
 
@@ -444,6 +454,41 @@
     const saved = localStorage.getItem('lsa-lang');
     if (saved && ['ca','es','en'].includes(saved)) setLang(saved);
   } catch (e) {}
+</script>
+
+
+<script>
+  (function () {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    // Animate grid/flex cards with stagger
+    document.querySelectorAll('main section:not(:first-child) .grid > *, main section:not(:first-child) .flex.gap-6').forEach(function (el, i) {
+      el.classList.add('fade-up');
+      el.style.transitionDelay = (i % 3) * 100 + 'ms';
+      io.observe(el);
+    });
+
+    // Animate section-level headings and intro blocks
+    document.querySelectorAll('main section:not(:first-child) > div > .text-center, main section:not(:first-child) > div > .md\:border-l, main section:not(:first-child) > div > .md\:col-span-1, main section:not(:first-child) > div > .md\:col-span-2, main section:not(:first-child) > div > .w-full').forEach(function (el) {
+      if (!el.classList.contains('fade-up')) {
+        el.classList.add('fade-up');
+        io.observe(el);
+      }
+    });
+
+    // Animate CTA and contact blocks
+    document.querySelectorAll('main section:not(:first-child) .navy-bg, main section:not(:first-child) .border-t').forEach(function (el, i) {
+      if (!el.classList.contains('fade-up')) {
+        el.classList.add('fade-up');
+        el.style.transitionDelay = i * 100 + 'ms';
+        io.observe(el);
+      }
+    });
+  })();
 </script>
 
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e97a20ecc8a24de58c612db9c8f2c93f"}'></script><!-- End Cloudflare Web Analytics -->
